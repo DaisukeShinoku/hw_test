@@ -1,19 +1,14 @@
-<%= turbo_frame_tag message do %>
-  <div id="<%= dom_id message %>">
-    <p>
-      <strong>Title:</strong>
-      <%= message.title %>
-    </p>
-
-    <p>
-      <strong>Score:</strong>
-      <%= message.score %>
-    </p>
-
-    <p>
-      <%= link_to 'Show', message %> |
-      <%= link_to 'Edit', edit_message_path(message) %>
-      <%= button_to 'Destroy', message, method: :delete %>
-    </p>
+<div class="row py-2 border-top">
+  <div class="col-4 my-auto">
+    <%= message.title %>
   </div>
-<% end %>
+  <div class="col-4 my-auto">
+    <%= message.score %>
+  </div>
+  <div class="col-4">
+    <div class="d-flex justify-content-end">
+      <%= link_to "編集", edit_message_path(message), class: "btn btn-sm btn-outline-primary me-2" %>
+      <%= button_to "削除", message, method: :delete, class: "btn btn-sm btn-outline-danger" %>
+    </div>
+  </div>
+</div>

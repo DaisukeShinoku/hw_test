@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     if @message.save
-      redirect_to @message, notice: "Message was successfully created."
+      redirect_to @message, notice: "メッセージを登録しました。"
     else
       render :new, status: :unprocessable_entity
     end
@@ -38,7 +38,9 @@ class MessagesController < ApplicationController
   # PATCH/PUT /messages/1
   def update
     if @message.update(message_params)
-      render '_message', locals: { message: @message }
+      # あとで戻す
+      # render '_message', locals: { message: @message }
+      redirect_to @message, notice: "メッセージを更新しました。"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -47,7 +49,7 @@ class MessagesController < ApplicationController
   # DELETE /messages/1
   def destroy
     @message.destroy!
-    redirect_to messages_url, notice: "Message was successfully destroyed.", status: :see_other
+    redirect_to messages_url, notice: "メッセージを削除しました。", status: :see_other
   end
 
   private
