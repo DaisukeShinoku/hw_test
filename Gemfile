@@ -39,8 +39,11 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 # bootstrap
-gem 'bootstrap-sass'
+gem "bootstrap-sass"
 gem "sassc-rails"
+
+# pagination
+gem "kaminari"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
