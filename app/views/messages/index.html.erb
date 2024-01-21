@@ -7,7 +7,7 @@
 <!-- 検索フォーム -->
 <div class="card shadow mt-3">
   <div class="card-header">
-    <%= icon_with_text("search", "検索条件") %>
+    検索条件
   </div>
 
   <div class="card-body">
@@ -22,7 +22,7 @@
           <%= f.search_field :score_eq, class: "form-control" %>
         </div>
         <div class="col-4 d-flex align-items-end">
-          <%= button_tag(icon_with_text("search", "検索"), class: "btn btn-primary me-1") %>
+          <%= button_tag("検索", class: "btn btn-primary me-1") %>
           <%= link_to "リセット", messages_path, class: "btn btn-outline-secondary" %>
         </div>
       </div>
@@ -33,7 +33,7 @@
 <!-- 一覧 -->
 <div class="card shadow mt-3">
   <div class="card-header">
-    <%= icon_with_text("table", "一覧") %>
+    一覧
   </div>
 
   <div class="card-body mx-3">
@@ -46,7 +46,7 @@
           <%= sort_link(@search, :score) %>
         </div>
         <div class="col-4 d-flex justify-content-end">
-          <%= link_to icon_with_text("plus-circle", "登録"),
+          <%= link_to "登録",
                       new_message_path,
                       class: "btn btn-outline-primary"
           %>
