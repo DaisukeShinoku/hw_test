@@ -44,6 +44,9 @@ gem "sassc-rails"
 # bootstrap5
 gem 'bootstrap', '~> 5.0.2'
 
+# bootstrap_form
+gem "bootstrap_form"
+
 #jquery
 gem 'jquery-rails'
 

@@ -86,6 +86,9 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.9.2, < 3)
       sassc-rails (>= 2.0.0)
+    bootstrap_form (5.4.0)
+      actionpack (>= 6.1)
+      activemodel (>= 6.1)
     builder (3.2.4)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
@@ -255,6 +258,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   bootstrap (~> 5.0.2)
+  bootstrap_form
   debug
   faker
   importmap-rails
