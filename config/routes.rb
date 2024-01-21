@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :messages, except: %i[show]
+  resources :messages
   root to: 'messages#index'
 end

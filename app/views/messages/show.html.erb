@@ -1,0 +1,8 @@
+<%= render @message %>
+
+<div>
+  <%= link_to "編集", edit_message_path(@message) %> |
+  <%= link_to "戻る", messages_path %>
+
+  <%= button_to "削除", @message, method: :delete %>
+</div>

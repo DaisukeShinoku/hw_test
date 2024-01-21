@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: %i[ edit update destroy ]
+  before_action :set_message, only: %i[ show edit update destroy ]
 
   # GET /messages
   def index
@@ -14,6 +14,10 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     @message = Message.new
+  end
+
+  # GET /messages/1
+  def show
   end
 
   # GET /messages/1/edit
