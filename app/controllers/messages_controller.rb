@@ -47,7 +47,7 @@ class MessagesController < ApplicationController
   # DELETE /messages/1
   def destroy
     @message.destroy!
-    redirect_to messages_url, notice: "メッセージを削除しました。", status: :see_other
+    flash.now.notice = "メッセージを削除しました。"
   end
 
   private
