@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
     # ransack用の検索条件を設定
     @search = Message.ransack(params[:q])
     # デフォルトのソート順を設定
-    @search.sorts = "title asc" if @search.sorts.empty?
+    @search.sorts = "id desc" if @search.sorts.empty?
     # 検索結果をpageメソッドでページング
     @messages = @search.result.page(params[:page])
   end
