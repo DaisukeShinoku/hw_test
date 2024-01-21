@@ -38,9 +38,7 @@ class MessagesController < ApplicationController
   # PATCH/PUT /messages/1
   def update
     if @message.update(message_params)
-      # あとで戻す
-      # render '_message', locals: { message: @message }
-      redirect_to @message, notice: "メッセージを更新しました。"
+      render '_message', locals: { message: @message }
     else
       render :edit, status: :unprocessable_entity
     end
