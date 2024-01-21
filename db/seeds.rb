@@ -1,3 +1,6 @@
-1.upto(100) do |i|
-  Message.create!(title: "Title#{i.to_s}", content: "Content#{i.to_s}")
+100.times do |n|
+  Message.create!(
+    title: Faker::Internet.unique.email,
+    content: Faker::Address.unique.full_address,
+  )
 end
