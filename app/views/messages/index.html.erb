@@ -2,6 +2,23 @@
 
 <h1>Messages</h1>
 
+<%# ransackを利用した検索フォームでは、form_withの代わりにsearch_form_forを使う %>
+<%= search_form_for @search do |f| %>
+
+  <%= f.label :title_cont, "題名" %>
+  <%= f.search_field :title_cont %>
+
+  <%= f.label :content_cont, "内容" %>
+  <%= f.search_field :content_cont %>
+  <%= f.submit %>
+
+  <%# 検索結果と検索フォームをクリアする %>
+  <%= link_to "クリア", messages_path %>
+<% end %>
+
+<%= sort_link(@search, :title) %>
+<%= sort_link(@search, :content) %>
+
 <div id="messages">
   <% @messages.each do |message| %>
     <%= render message %>

@@ -3,7 +3,12 @@ class MessagesController < ApplicationController
 
   # GET /messages
   def index
-    @messages = Message.page(params[:page])
+    # ransack用の検索条件を設定
+    @search = Message.ransack(params[:q])
+    # デフォルトのソート順を設定
+    @search.sorts = "id desc" if @search.sorts.empty?
+    # 検索結果をpageメソッドでページング
+    @messages = @search.result.page(params[:page])
   end
 
   # GET /messages/1
