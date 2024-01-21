@@ -8,8 +8,8 @@
   <%= f.label :title_cont, "題名" %>
   <%= f.search_field :title_cont %>
 
-  <%= f.label :content_cont, "内容" %>
-  <%= f.search_field :content_cont %>
+  <%= f.label :score_eq, "点数" %>
+  <%= f.search_field :score_eq %>
   <%= f.submit %>
 
   <%# 検索結果と検索フォームをクリアする %>
@@ -17,7 +17,7 @@
 <% end %>
 
 <%= sort_link(@search, :title) %>
-<%= sort_link(@search, :content) %>
+<%= sort_link(@search, :score) %>
 
 <div id="messages">
   <% @messages.each do |message| %>

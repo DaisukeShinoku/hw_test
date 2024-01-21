@@ -5,4 +5,4 @@ ja:
     attributes:
       message:
         title: 題名
-        content: 内容
+        score: 点数
