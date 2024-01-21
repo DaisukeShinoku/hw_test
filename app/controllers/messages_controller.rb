@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
     # ransack用の検索条件を設定
     @search = Message.ransack(params[:q])
     # デフォルトのソート順を設定
-    @search.sorts = "id desc" if @search.sorts.empty?
+    @search.sorts = "title asc" if @search.sorts.empty?
     # 検索結果をpageメソッドでページング
     @messages = @search.result.page(params[:page])
   end
@@ -38,7 +38,7 @@ class MessagesController < ApplicationController
   # PATCH/PUT /messages/1
   def update
     if @message.update(message_params)
-      render '_message', locals: { message: @message }
+      flash.now.notice = "メッセージを更新しました。"
     else
       render :edit, status: :unprocessable_entity
     end
