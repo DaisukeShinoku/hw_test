@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     if @message.save
-      redirect_to @message, notice: "メッセージを登録しました。"
+      flash.now.notice = "メッセージを登録しました。"
     else
       render :new, status: :unprocessable_entity
     end
