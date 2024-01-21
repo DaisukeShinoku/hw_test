@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: %i[ show edit update destroy ]
+  before_action :set_message, only: %i[ edit update destroy ]
 
   # GET /messages
   def index
@@ -9,10 +9,6 @@ class MessagesController < ApplicationController
     @search.sorts = "id desc" if @search.sorts.empty?
     # 検索結果をpageメソッドでページング
     @messages = @search.result.page(params[:page])
-  end
-
-  # GET /messages/1
-  def show
   end
 
   # GET /messages/new
